@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Library</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ library.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ library.title }}</td>
+            </tr>
+            <tr>
+                <th>Subject</th>
+                <td>{{ library.subject }}</td>
+            </tr>
+            <tr>
+                <th>Year</th>
+                <td>{{ library.year }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ library.type }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ library.status }}</td>
+            </tr>
+            <tr>
+                <th>Authername</th>
+                <td>{{ library.autherName }}</td>
+            </tr>
+            <tr>
+                <th>Publisher</th>
+                <td>{{ library.publisher }}</td>
+            </tr>
+            <tr>
+                <th>Assetdetails</th>
+                <td>{{ library.assetDetails }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('library_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('library_edit', { 'id': library.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

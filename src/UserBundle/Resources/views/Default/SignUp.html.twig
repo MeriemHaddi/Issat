@@ -1,0 +1,83 @@
+{% extends 'admin-dash.twig' %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock  %}
+{% block header %}
+{% endblock  %}
+{% block container %}
+    <div class="limiter">
+        <div class="container-login100 page-background">
+            <div class="wrap-login100">
+                {{ form_start(form,{'attr': {'class': 'login100-form validate-form ','id':'register_form','name':'fos_user_registration_form','action':'/registration'}}) }}
+
+                <span class="login100-form-logo">
+						<img alt="" src="../assets/img/logo-2.png">
+					</span>
+                <span class="login100-form-title p-b-34 p-t-27">
+						Registration
+					</span>
+                <div class="row">
+                    <div class="col-lg-6 p-t-20">
+                        <div class="wrap-input100 validate-input" data-validate = "Enter username">
+                            {{ form_widget(form.username,{'attr': {'class':"input100" , "placeholder" : "Username"}}) }}
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-t-20">
+                        <div class="wrap-input100 validate-input" data-validate = "Enter email">
+                            {{ form_widget(form.email,{'attr': {'class':"input100" , "placeholder" : "Email"}}) }}
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-t-20">
+                        <div class="wrap-input100 validate-input" data-validate="Enter password">
+                            {{ form_widget(form.plainPassword,{'attr': {'class':"input100" , "placeholder" : "Password"}}) }}
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-t-20">
+                        <div class="wrap-input100 validate-input" data-validate="Enter password again">
+                            <input class="input100" type="password" name="pass2" placeholder="Confirm password">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-lg-3 p-t-20">
+                    </div>
+
+
+                    <div class="form-group col-lg-6 p-t-20">
+                        <select class="form-control" id="sel1" name="SRole">
+                            <option disabled selected>---Role---</option>
+                            <option value="student">Student</option>
+                            <option value="teacher">Teacher</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <div class="contact100-form-checkbox col-lg-6 p-t-20">
+                    <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                    <label class="label-checkbox100" for="ckb1">
+                        Remember me
+                    </label>
+                </div>
+
+
+
+                <div class="container-login100-form-btn">
+                    {{ form_widget(form.SignUp,{'attr': {'class':"login100-form-btn"}}) }}
+
+                </div>
+                <div class="text-center p-t-30">
+                    <a class="txt1" href="login.html">
+                        You already have a membership?
+                    </a>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock  %}
+

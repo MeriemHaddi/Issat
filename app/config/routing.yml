@@ -1,0 +1,41 @@
+departement_classe:
+    resource: "@DepartementBundle/Controller/ClasseController.php"
+    type:     annotation
+
+departement_library:
+    resource: "@DepartementBundle/Controller/LibraryController.php"
+    type:     annotation
+
+departement_course:
+    resource: "@DepartementBundle/Controller/CourseController.php"
+    type:     annotation
+
+club_event:
+    resource: "@ClubBundle/Controller/EventController.php"
+    type:     annotation
+
+club_club:
+    resource: "@ClubBundle/Controller/ClubController.php"
+    type:     annotation
+
+club:
+    resource: "@ClubBundle/Resources/config/routing.yml"
+    prefix:   /
+
+departement_departement:
+    resource: "@DepartementBundle/Controller/DepartementController.php"
+    type:     annotation
+
+UserExtends:
+    resource: "@UserBundle/Controller/UserController.php"
+    type:     annotation
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+user:
+  resource: "@UserBundle/Resources/config/routing.yml"
+  prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+

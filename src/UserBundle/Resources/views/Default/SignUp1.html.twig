@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create an account</title>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="shortcut icon" href="http://radixtouch.in/templates/admin/smart/source/assets/img/favicon.ico" />
+    <link href="http://guateapps.me/demov5/style/cms/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet" type="text/css">
+    <link href="http://guateapps.me/demov5/style/cms/bower_components/select2/dist/css/select2.min.css" rel="stylesheet">
+    <link href="http://guateapps.me/demov5/style/cms/bower_components/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="http://guateapps.me/demov5/style/cms/bower_components/dropzone/dist/dropzone.css" rel="stylesheet">
+    <link href="http://guateapps.me/demov5/style/cms/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="http://guateapps.me/demov5/style/cms/bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
+    <link href="http://guateapps.me/demov5/style/cms/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="http://guateapps.me/demov5/style/cms/icon_fonts_assets/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <link href="http://guateapps.me/demov5/style/cms/icon_fonts_assets/picons-thin/style.css" rel="stylesheet">
+    <link href="http://guateapps.me/demov5/style/cms/css/main.css?version=3.1" rel="stylesheet">
+    <script src="http://guateapps.me/demov5/assets/js/jquery-1.11.0.min.js"></script>
+</head>
+<body class="auth-wrapper login" style="background: url('http://guateapps.me/demov5/uploads/bglogin.jpg');background-size: cover;background-repeat: no-repeat;">
+<script type="text/javascript">var baseurl = 'http://guateapps.me/demov5/';</script>
+<div class="auth-box-w register" style="margin-bottom:2rem;">
+    <div class="logo-wy">
+    </div>
+    <div class="content-i">
+        <div class="content-box" style="padding-bottom:0px">
+            <div class="tab-content">
+                <div class="os-tabs-w">
+                    <div class="os-tabs-controls">
+                        <ul class="nav nav-tabs upper centered">
+                            <li class="nav-item">
+                                <a class="nav-link active" style="" data-toggle="tab" href="#teachers"><span>Sign Up</span></a>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="tab-pane active" >
+                    <div class="col-lg-12">
+                        <div class="element-wrapper">
+                             {{ form_start(form,{'attr': {'name':'fos_user_registration_form','action':'/registration'}}) }}
+
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label" for=""> Name</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
+
+                                            {{ form_widget(form.name,{'attr': { "placeholder" : "Enter Name" , 'type':"text" ,"class":"form-control"}}) }}
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-form-label col-sm-3" for=""> Account Type</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
+
+                                            <select class="form-control" name="SRole" id="role">
+                                                <option value="select">Select</option>
+                                                <option value="student">Student</option>
+                                                <option value="teacher">Teacher</option>
+                                            </select>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label" for="">Username</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
+
+
+                                            {{ form_widget(form.username,{'attr': { "placeholder" : "Username" , 'type':"text" ,"class":"form-control"}}) }}
+
+                                        </div>
+                                        <small><span id="result2"></span></small>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-form-label col-sm-3" for=""> Email</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
+
+                                            {{ form_widget(form.email,{'attr': { "placeholder" : "Enter Email" , 'type':"text" ,"class":"form-control"}}) }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-form-label col-sm-3" for=""> Department</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
+
+
+                                            {{ form_widget(form.departement,{'attr': { "name":"section_id" ,"class":"form-control"}}) }}
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            <div class="form-group row" id = "classe" >
+                                <label class="col-form-label col-sm-3" for=""> Classe</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+
+
+                                        {{ form_widget(form.classe,{'attr': { "name":"section_id" ,"class":"form-control"}}) }}
+
+                                    </div>
+                                </div>
+                            </div>
+
+                                <div class="form-group row">
+                                    <label class="col-form-label col-sm-3" for=""> Phone Number</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
+
+                                            {{ form_widget(form.phone,{'attr': { "placeholder" : "Enter Phone Number" , 'type':"text" ,"class":"form-control"}}) }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-form-label col-sm-3" for=""> Password</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
+
+                                            {{ form_widget(form.plainPassword,{'attr': { "placeholder" : "Enter password" , 'name':"password", 'type':"password" ,"class":"form-control"}}) }}
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttons-w">
+                                    <input class="btn btn-rounded btn-primary" type="submit" value="Submit">
+                                    <a href="{{ path('login_page') }}">
+                                        <input class="btn btn-rounded btn-primary" style="background-color:  green; " type="button" value="Login">
+                                    </a>
+                                </div>
+                                {{ form_end(form) }}
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{ asset('assets/js/myJs.js') }}" ></script>
+<script src="http://guateapps.me/demov5/assets/js/gsap/main-gsap.js"></script>
+<script src="http://guateapps.me/demov5/assets/js/jquery.validate.min.js"></script>
+<script src="http://guateapps.me/demov5/assets/js/neon-login.js"></script>
+<!--<script src="http://guateapps.me/demov5/assets/js/jquery-1.11.3.min.js"></script>-->
+<script src="http://guateapps.me/demov5/style/cms/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="http://guateapps.me/demov5/style/cms/bower_components/moment/moment.js"></script>
+<script src="http://guateapps.me/demov5/style/cms/bower_components/tether/dist/js/tether.min.js"></script>
+<script src="http://guateapps.me/demov5/style/cms/bower_components/select2/dist/js/select2.full.min.js"></script>
+<script src="http://guateapps.me/demov5/style/cms/bower_components/bootstrap-validator/dist/validator.min.js"></script>
+<script src="http://guateapps.me/demov5/style/cms/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="http://guateapps.me/demov5/style/cms/bower_components/dropzone/dist/dropzone.js"></script>
+<script src="http://guateapps.me/demov5/style/cms/bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
+<script src="http://guateapps.me/demov5/style/cms/bower_components/bootstrap/js/dist/util.js"></script>
+<script src="http://guateapps.me/demov5/style/cms/bower_components/bootstrap/js/dist/tab.js"></script>
+<script src="http://guateapps.me/demov5/style/cms/js/main.js?version=3.2.1"></script>
+<script src="http://guateapps.me/demov5/style/cms/js/toastr.js"></script>
+<script src="http://guateapps.me/demov5/style/cms/bower_components/dragula.js/dist/dragula.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="http://guateapps.me/demov5/style/cms/js/toastr.js"></script>
+
+
+</body>
+</html>

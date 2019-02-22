@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Libraries list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Subject</th>
+                <th>Year</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th>Authername</th>
+                <th>Publisher</th>
+                <th>Assetdetails</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for library in libraries %}
+            <tr>
+                <td><a href="{{ path('library_show', { 'id': library.id }) }}">{{ library.id }}</a></td>
+                <td>{{ library.title }}</td>
+                <td>{{ library.subject }}</td>
+                <td>{{ library.year }}</td>
+                <td>{{ library.type }}</td>
+                <td>{{ library.status }}</td>
+                <td>{{ library.autherName }}</td>
+                <td>{{ library.publisher }}</td>
+                <td>{{ library.assetDetails }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('library_show', { 'id': library.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('library_edit', { 'id': library.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('library_new') }}">Create a new library</a>
+        </li>
+    </ul>
+{% endblock %}

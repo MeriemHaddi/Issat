@@ -1,0 +1,19 @@
+user_user:
+    resource: "@UserBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
+user_homepage:
+    path:     /
+    defaults: { _controller: UserBundle:Default:Login }
+
+proprite_signup:
+    path:     /registration
+    defaults: { _controller: UserBundle:Default:SignUp }
+
+login_page:
+    path:     /login
+    defaults: { _controller: UserBundle:Default:Login }
+
+profile_page:
+    path:     /profile
+    defaults: { _controller: UserBundle:Profile:edit }

@@ -1,0 +1,118 @@
+{% extends 'admin-dash.twig' %}
+
+{% block head  %}
+    {{ parent() }}
+{% endblock %}
+
+{% block header  %}
+    {{ parent() }}
+
+{% endblock %}
+
+{% block container  %}
+    {{ parent() }}
+
+{% endblock %}
+
+	{% block content  %}
+
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <div class="page-bar">
+                    <div class="page-title-breadcrumb">
+                        <div class=" pull-left">
+                            <div class="page-title">Course Details</div>
+                        </div>
+                        <ol class="breadcrumb page-breadcrumb pull-right">
+                            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="admin-dash.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+                            </li>
+                            <li><a class="parent-item" href="#">Course</a>&nbsp;<i class="fa fa-angle-right"></i>
+                            </li>
+                            <li class="active">Course Details</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- BEGIN PROFILE SIDEBAR -->
+                        <div class="profile-sidebar">
+                            <div class="card card-topline-aqua">
+                                <div class="card-body no-padding height-9">
+                                    <div class="row">
+                                        <div class="course-picture">
+                                            <img src="{{ asset('UPImages/'~ course.image) }}" class="img-responsive" alt=""> </div>
+                                    </div>
+                                    <div class="profile-usertitle">
+                                        <div class="profile-usertitle-name"> {{ course.name }} </div>
+                                    </div>
+                                    <!-- END SIDEBAR USER TITLE -->
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-head card-topline-aqua">
+                                    <header>About Course</header>
+                                </div>
+                                <div class="card-body no-padding height-9">
+                                    <div class="profile-desc">
+                                        {{ course.description| split('.', 2)[0] }}
+
+
+                                    </div>
+                                    <ul class="list-group list-group-unbordered">
+                                        <li class="list-group-item">
+                                            <b>Duration </b>
+                                            <div class="profile-desc-item pull-right">{{ course.duration }}</div>
+                                        </li>
+
+
+                                        <li class="list-group-item">
+                                            <b>Date</b>
+                                            <div class="profile-desc-item pull-right">{{ course.startingDate }}</div>
+                                        </li>
+                                    </ul>
+                                    <div class="row list-separated profile-stat" style="display: none;">
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- END BEGIN PROFILE SIDEBAR -->
+                        <!-- BEGIN PROFILE CONTENT -->
+                        <div class="profile-content">
+                            <div class="row">
+                                <div class="card">
+                                    <div class="card-topline-aqua">
+                                        <header></header>
+                                    </div>
+                                    <div class="white-box">
+                                        <!-- Nav tabs -->
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div class="tab-pane active fontawesome-demo">
+                                                <div id="biography" >
+                                                   <p>{{ course.description }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END PROFILE CONTENT -->
+                    </div>
+                </div>
+            </div>
+            <!-- end page content -->
+
+        </div>
+
+
+    {% endblock %}
+
+{% block includeJS  %}
+    {{ parent() }}
+
+{% endblock %}
+
